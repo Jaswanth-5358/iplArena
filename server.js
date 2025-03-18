@@ -68,7 +68,7 @@ app.get("/payment", (req, res) => {
 });
  
 app.get("/tickets.html", (req, res) => {
-  res.render("tickets");
+  res.render("Tickets");
 });
    
 app.post("/seating", async (req, res) => {
