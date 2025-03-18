@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Arena - Venues</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #162938;
+            color: white;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover, .active {
+            color: #fdbb2d;
+        }
+
+        /* Venues Section */
+        .venues {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .stadiums {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .stadium {
+            width: 300px;
+            margin: 15px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .stadium img {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .stadium:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #162938;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+            <img src="https://imgs.search.brave.com/vWfyxwtw9RXYtz4tAyp2aaqTUTywm8s-8l9AwkLV6hU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzg3L2E3/L2EzLzg3YTdhM2Ew/NzE3N2YxMjFhYTFj/YjBkNzJlNjE5ZTJh/LmpwZw" alt="IPL Arena Logo">
+            <h1>IPL Arena</h1>
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/matches">Matches</a>
+            <a href="/profile">Profile</a>
+            <a href="/about">About</a>
+            <a href="/venues" class="active">Venues</a>
+        </nav>
+    </header>
+
+    <!-- Venues Section -->
+    <section class="venues">
+        <h2>🏟️ IPL Stadiums</h2>
+        <p>Click on a stadium to view its location on Google Maps.</p>
+        <div class="stadiums">
+            <div class="stadium">
+                <a href="https://www.google.com/maps/place/Rajiv+Gandhi+International+Cricket+Stadium/@17.4065,78.5504,17z/" target="_blank">
+                    <img src="./images/stadium1.jpg" alt="Rajiv Gandhi International Stadium">
+                </a>
+                <h3>Rajiv Gandhi International Stadium</h3>
+                <p>📍 Hyderabad, India</p>
+            </div>
+            <div class="stadium">
+                <a href="https://www.google.com/maps/place/M+Chinnaswamy+Stadium/@12.9788,77.5998,17z/" target="_blank">
+                    <img src="./images/stadium2.jpg" alt="M. Chinnaswamy Stadium">
+                </a>
+                <h3>M. Chinnaswamy Stadium</h3>
+                <p>📍 Bengaluru, India</p>
+            </div>
+            <div class="stadium">
+                <a href="https://www.google.com/maps/place/M.+A.+Chidambaram+Stadium/@13.062,80.2792,17z/" target="_blank">
+                    <img src="./images/stadium3.jpg" alt="M.A. Chidambaram Stadium">
+                </a>
+                <h3>M.A. Chidambaram Stadium</h3>
+                <p>📍 Chennai, India</p>
+            </div>
+            <div class="stadium">
+                <a href="https://www.google.com/maps/place/Arun+Jaitley+Stadium/@28.6353,77.241,17z/" target="_blank">
+                    <img src="./images/stadium4.jpg" alt="Arun Jaitley Stadium">
+                </a>
+                <h3>Arun Jaitley Stadium</h3>
+                <p>📍 Delhi, India</p>
+            </div>
+            <div class="stadium">
+                <a href="https://www.google.com/maps/place/Wankhede+Stadium/@18.9388,72.8258,17z/" target="_blank">
+                    <img src="./images/stadium5.jpg" alt="Wankhede Stadium">
+                </a>
+                <h3>Wankhede Stadium</h3>
+                <p>📍 Mumbai, India</p>
+            </div>
+            <div class="stadium">
+                <a href="https://www.google.com/maps/place/Bharat+Ratna+Shri+Atal+Bihari+Vajpayee+Ekana+Cricket+Stadium/@26.8151,81.013,17z/" target="_blank">
+                    <img src="./images/stadium6.jpg" alt="Ekana Cricket Stadium">
+                </a>
+                <h3>Ekana Cricket Stadium</h3>
+                <p>📍 Lucknow, India</p>
+            </div>
+            <div class="stadium">
+                <a href="https://www.google.com/maps/place/Sawai+Mansingh+Stadium/@26.8937,75.808,17z/" target="_blank">
+                    <img src="./images/stadium7.jpg" alt="Sawai Mansingh Stadium">
+                </a>
+                <h3>Sawai Mansingh Stadium</h3>
+                <p>📍 Jaipur, India</p>
+            </div>
+            <div class="stadium">
+                <a href="https://www.google.com/maps/place/Eden+Gardens/@22.5646,88.3433,17z/" target="_blank">
+                    <img src="./images/stadium8.jpg" alt="Eden Gardens">
+                </a>
+                <h3>Eden Gardens</h3>
+                <p>📍 Kolkata, India</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 IPL Arena. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

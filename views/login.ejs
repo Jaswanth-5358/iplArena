@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+   html, body {
+    font-family: 'Arial', sans-serif;
+    height: 100%; /* Ensures full height */
+    margin: 0; /* Removes default margin */
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1; /* Pushes footer to the bottom */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #162938;
+    color: white;
+    width: 100%; /* Full width */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://imgs.search.brave.com/vWfyxwtw9RXYtz4tAyp2aaqTUTywm8s-8l9AwkLV6hU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzg3L2E3/L2EzLzg3YTdhM2Ew/NzE3N2YxMjFhYTFj/YjBkNzJlNjE5ZTJh/LmpwZw" alt="IPL Logo">
+            <h2>IPL Arena</h2>
+        </div>
+        <nav class="navigation nav">
+            <a href="/" target="_blank" class="icon">Home</a>
+            <a href="/about" target="_blank" class="icon">About</a>
+            <a href="/profile"target="_blank" class="icon">Profile</a>
+            <a href="/matches"target="_blank" class="icon">Matches</a>
+            <a href="/venues"target="_blank" class="icon">Venues</a>
+            <ion-icon name="menu-outline"></ion-icon>
+            <button class="btnlogin-popup icon">Login</button>
+        </nav>
+    </header>
+    
+    <div class="content">
+        <h1>One  League ,  infinite  thrill   Welcome  to  IPL!</h1><br />
+         <p>Feel The heat,Witness the feat!</p>
+    </div>
+    <div class="wrapper">
+        <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+        <div class="loginform">
+            <h2>Login</h2>
+            <form  method="post" class="login">
+                <div class="inputbox">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>    
+                        <input type="email" name="email" required>
+                        <label for="email">Email</label>
+                </div>
+                <div class="inputbox">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                   <input type="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="remember-forget">
+                    <label for=""><input type="checkbox">Remember Me</label>
+                    <a href="#">Forget Password</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="registerLink">Register</a></p>
+                </div>
+            </form>
+            <div id="loginMessage" class="message"></div>
+        </div>
+
+        <div class="registerform">
+            <h2 style="text-align: center;">Registration</h2>
+            <form  method="post" class="register">
+                <div class="inputbox">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>    
+                        <input type="text" name="username" required>
+                        <label >Username</label>
+                </div>
+                <div class="inputbox">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>    
+                        <input type="email" name="email" required>
+                        <label for="email">Email</label>
+                </div>
+                <div class="inputbox">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                <input type="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="remember-forget">
+                    <label for=""><input type="checkbox">Remember Me</label>
+                    <a href="#">I agree to terms and conditions</a>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+             <div id="registerMessage" class="message"></div>
+        </div> 
+    </div>
+     <!-- Footer -->
+    <footer>
+        <p>© 2025 IPL Arena. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

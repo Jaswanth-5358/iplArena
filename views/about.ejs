@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About IPL Arena</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #162938;
+            color: white;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover, .active {
+            color: #fdbb2d;
+        }
+
+        /* Banner Section */
+        .banner {
+            background: url('ipl_banner.jpg') center/cover no-repeat;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* About Content */
+        .about-content {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            width: 22%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+
+        .feature:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        /* Booking Steps */
+        .steps {
+            background: #eaf0f1;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .step-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            width: 22%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+
+        .step:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #162938;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #162938;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+            <img src="https://imgs.search.brave.com/vWfyxwtw9RXYtz4tAyp2aaqTUTywm8s-8l9AwkLV6hU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzg3L2E3/L2EzLzg3YTdhM2Ew/NzE3N2YxMjFhYTFj/YjBkNzJlNjE5ZTJh/LmpwZw" alt="IPL Arena Logo">
+            <h1>IPL Arena</h1>
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/matches">Matches</a>
+            <a href="/profile">Profile</a>
+            <a href="/about" class="active">About</a>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="overlay">
+            <h2>About IPL Arena</h2>
+            <p>Your Ultimate Destination for IPL Ticket Booking!</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content">
+        <h2>Why Choose IPL Arena?</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>🎟️ Hassle-Free Booking</h3>
+                <p>Book your IPL tickets anytime, anywhere with a smooth and secure process.</p>
+            </div>
+            <div class="feature">
+                <h3>🏏 Best Seating Experience</h3>
+                <p>Interactive stadium layouts help you pick the perfect view.</p>
+            </div>
+            <div class="feature">
+                <h3>💳 Secure Payments</h3>
+                <p>Multiple payment options with end-to-end encryption.</p>
+            </div>
+            <div class="feature">
+                <h3>📩 Instant Ticket Confirmation</h3>
+                <p>Get your e-ticket instantly via email and your profile dashboard.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Steps -->
+    <section class="steps">
+        <h2>How It Works?</h2>
+        <div class="step-container">
+            <div class="step">
+                <h3>1️⃣ Browse Matches</h3>
+                <p>Check match schedules, teams, and venues.</p>
+            </div>
+            <div class="step">
+                <h3>2️⃣ Select Seats</h3>
+                <p>Use our interactive stadium map to pick the best view.</p>
+            </div>
+            <div class="step">
+                <h3>3️⃣ Secure Payment</h3>
+                <p>Complete your payment using trusted gateways.</p>
+            </div>
+            <div class="step">
+                <h3>4️⃣ Get E-Tickets</h3>
+                <p>Receive tickets instantly and get match reminders.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Need Help? Contact Us!</h2>
+        <p>📧 Email: support@iplarena.com</p>
+        <p>📞 Customer Support: +91 98765 43210</p>
+        <p>📍 Address: IPL Arena Headquarters, Mumbai, India</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 IPL Arena. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      /* Header & Navigation */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #162938;
+        color: white;
+        padding: 15px 20px;
+      }
+
+      .navigation a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 16px;
+        padding: 10px;
+      }
+
+      .navigation a:hover {
+        background-color: #003d82;
+        border-radius: 5px;
+      }
+
+      .btn-logout {
+        padding: 8px 12px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .profile-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 50px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 70%;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .profile-left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .profile-left img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 3px solid #162938;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .profile-right {
+        flex: 2;
+        padding-left: 30px;
+      }
+
+      .profile-form input,
+      .profile-form textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #162938;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      /* Zoomed-in Profile Picture */
+      .zoomed {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(2);
+        border: 5px solid #162938;
+        z-index: 10;
+      }
+
+      /* Overlay Background */
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 9;
+      }
+
+      /* History Section */
+      .history-container {
+        margin: 30px auto;
+        width: 70%;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .history-container h2 {
+        margin-bottom: 10px;
+      }
+
+      .history-list p {
+        background: #f4f4f4;
+        padding: 8px;
+        border-radius: 5px;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>IPL Arena</h2>
+      <nav class="navigation">
+        <a href="/">Home</a>
+        <a href="/matches">Matches</a>
+        <a href="/profile">Profile</a>
+        <button class="btn-logout" onclick="handleLogout()">Logout</button>
+      </nav>
+    </header>
+
+    <div class="profile-container">
+      <div class="profile-right">
+        <h2>User Profile</h2>
+        <form id="profile-form" class="profile-form">
+          <label>Username:</label>
+          <input type="text" id="username" />
+
+          <label>Email:</label>
+          <input type="email" id="email" />
+
+          <label>About:</label>
+          <textarea id="about" rows="3"></textarea>
+
+          <label>Interests:</label>
+          <input type="text" id="interests" />
+
+          <label>Date of Birth:</label>
+          <input type="date" id="dob" />
+
+          <label>Mobile Number:</label>
+          <input type="tel" id="mobile" />
+
+          <label>Address:</label>
+          <textarea id="address" rows="3"></textarea>
+
+          <button type="submit">Save Profile</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- <div class="history-container">
+      <h2>Booking History</h2>
+      <div id="history-list" class="history-list">
+        <p>No bookings available</p>
+      </div>
+    </div> -->
+
+    <div class="overlay hidden"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        const userId = localStorage.getItem("userId");
+        if (!userId) {
+          alert("User not found. Please log in.");
+          window.location.href = "/login";
+          return;
+        }
+
+        const profileForm = document.getElementById("profile-form");
+
+        // Fetch and display user profile
+        const loadUserProfile = async () => {
+          try {
+            const response = await fetch(
+              `http://localhost:3000/user/${userId}`
+            );
+            const userData = await response.json();
+
+            if (userData) {
+              document.getElementById("username").value =
+                userData.username || "";
+              document.getElementById("email").value = userData.email || "";
+              document.getElementById("about").value = userData.about || "";
+              document.getElementById("interests").value =
+                userData.interests || "";
+              document.getElementById("dob").value = userData.dob || "";
+              document.getElementById("mobile").value = userData.mobile || "";
+              document.getElementById("address").value = userData.address || "";
+            }
+          } catch (error) {
+            console.error("Error fetching user data:", error);
+          }
+        };
+
+        loadUserProfile();
+
+        profileForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const updatedData = {
+            username: document.getElementById("username").value,
+            email: document.getElementById("email").value,
+            about: document.getElementById("about").value,
+            interests: document.getElementById("interests").value,
+            dob: document.getElementById("dob").value,
+            mobile: document.getElementById("mobile").value,
+            address: document.getElementById("address").value,
+          };
+
+          try {
+            const response = await fetch(
+              `http://localhost:3000/user/${userId}`,
+              {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(updatedData),
+              }
+            );
+
+            if (response.ok) {
+              alert("Profile updated successfully!");
+            } else {
+              alert("Failed to update profile.");
+            }
+          } catch (error) {
+            console.error("Error updating user profile:", error);
+          }
+        });
+      });
+
+      function handleLogout() {
+        localStorage.removeItem("userId");
+        alert("You are logged out...");
+        window.location.href = "/login";
+      }
+    </script>
+  </body>
+</html>

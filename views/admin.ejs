@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - IPL Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .stadium {
+            display: grid;
+            grid-template-columns: repeat(10, 50px);
+            gap: 10px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .seat {
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .booked {
+            background-color: red;
+        }
+        .controls {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Panel - IPL Ticket Booking</h1>
+    <div class="stadium" id="stadium"></div>
+    <div class="controls">
+        <button onclick="resetSeats()">Reset All Bookings</button>
+    </div>
+    
+    <script>
+        const stadium = document.getElementById('stadium');
+        const totalSeats = 50;
+        let seats = [];
+
+        function renderSeats() {
+            stadium.innerHTML = '';
+            seats.forEach((status, index) => {
+                const seat = document.createElement('div');
+                seat.classList.add('seat');
+                if (status === 'booked') seat.classList.add('booked');
+                seat.textContent = index + 1;
+                seat.onclick = () => toggleSeat(index);
+                stadium.appendChild(seat);
+            });
+        }
+
+        function toggleSeat(index) {
+            seats[index] = seats[index] === 'booked' ? 'available' : 'booked';
+            renderSeats();
+        }
+
+        function resetSeats() {
+            seats = Array(totalSeats).fill('available');
+            renderSeats();
+        }
+
+        // Initialize seats
+        resetSeats();
+    </script>
+</body>
+</html>
