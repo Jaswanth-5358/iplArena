@@ -319,7 +319,7 @@
         const matchId = localStorage.getItem("matchId"); // Assuming you're storing matchId in localStorage
         const userId = localStorage.getItem("userId"); // Assuming userId is stored after login
 
-        const response = await fetch("http://localhost:3000/book", {
+        const response = await fetch("/book", {
           // Add 'http://localhost:3000' for proper request handling
           method: "POST",
           headers: { "Content-Type": "application/json" },
