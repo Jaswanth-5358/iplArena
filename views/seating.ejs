@@ -204,7 +204,7 @@
 
         try {
           const response = await fetch(
-            `http://localhost:3000/booked-seats?matchId=${matchId}`
+            `/booked-seats?matchId=${matchId}`
           );
           const bookedSeats = await response.json();
 
