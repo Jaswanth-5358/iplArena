@@ -45,7 +45,7 @@ app.use('/user',profileRoutes);
 
 
 app.get("/matches", (req, res) => {
-  res.render("matches");
+  res.render("Matches");
 });
 
 app.get("/venues", (req, res) => {
